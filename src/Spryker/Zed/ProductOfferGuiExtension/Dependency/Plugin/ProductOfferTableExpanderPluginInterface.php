@@ -18,12 +18,9 @@ interface ProductOfferTableExpanderPluginInterface
     /**
      * Specification:
      * - Expands product offer table query criteria.
+     * - Added joins must match at most one row per product offer, otherwise offers are listed more than once and the page shows fewer offers.
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\QueryCriteriaTransfer $queryCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\QueryCriteriaTransfer
      */
     public function expandQueryCriteria(QueryCriteriaTransfer $queryCriteriaTransfer): QueryCriteriaTransfer;
 
@@ -32,10 +29,6 @@ interface ProductOfferTableExpanderPluginInterface
      * - Expands product offer table configuration.
      *
      * @api
-     *
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
      */
     public function expandTableConfiguration(TableConfiguration $config): TableConfiguration;
 
